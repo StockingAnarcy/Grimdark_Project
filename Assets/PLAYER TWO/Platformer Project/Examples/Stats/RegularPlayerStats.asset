@@ -95,7 +95,7 @@ MonoBehaviour:
   airDiveSlopeDownwardForce: 40
   airDiveGroundLeapHeight: 10
   airDiveRotationSpeed: 45
-  canStompAttack: 0
+  canStompAttack: 1
   stompDownwardForce: 20
   stompAirTime: 0.8
   stompGroundTime: 0.25
@@ -117,7 +117,7 @@ MonoBehaviour:
     m_Bits: 8705
   ledgeClimbingSkinOffset: {x: 0, y: 0, z: 0}
   ledgeClimbingDuration: 1
-  canBackflip: 0
+  canBackflip: 1
   backflipLockMovement: 1
   backflipAirAcceleration: 12
   backflipTurningDrag: 2.5

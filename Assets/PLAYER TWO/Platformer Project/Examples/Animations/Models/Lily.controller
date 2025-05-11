@@ -287,7 +287,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400002, guid: 992a96fce35f3244294d8b0b1c916614, type: 3}
+  m_Motion: {fileID: 7400000, guid: 47ae7b5acf38d124492e64e0c0a09355, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -637,7 +637,7 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 4
     m_ConditionEvent: Lateral Speed
-    m_EventTreshold: 4
+    m_EventTreshold: 5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7583878431990018553}
   m_Solo: 0
@@ -825,7 +825,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400006, guid: 992a96fce35f3244294d8b0b1c916614, type: 3}
+  m_Motion: {fileID: 7937699749848384451, guid: 40e21d8ce79cdf04a9168a06cb1ed52e,
+    type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -893,7 +894,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 1827226128182048838, guid: 54b77632304892b488ec8ac47b314812,
+  m_Motion: {fileID: -3120443879914011131, guid: 40e21d8ce79cdf04a9168a06cb1ed52e,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
@@ -1258,7 +1259,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Lily|Dash
-  m_Speed: 2
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -1270,8 +1271,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7130654569036751147, guid: 40e21d8ce79cdf04a9168a06cb1ed52e,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: eff636264ba5a9c4ea1cb3915c54b86f, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1580,7 +1580,7 @@ AnimatorStateTransition:
     m_EventTreshold: 1
   - m_ConditionMode: 3
     m_ConditionEvent: Lateral Speed
-    m_EventTreshold: 4
+    m_EventTreshold: 5
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 570428088815291891}
   m_Solo: 0
@@ -1615,7 +1615,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400014, guid: c340b91f40f717b42a988596ba618da9, type: 3}
+  m_Motion: {fileID: -3723875310803111106, guid: 40e21d8ce79cdf04a9168a06cb1ed52e,
+    type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
