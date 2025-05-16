@@ -37,6 +37,8 @@ namespace PLAYERTWO.PlatformerProject
 		/// </summary>
 		public Health health { get; protected set; }
 
+		public PlayerCombat combat { get; protected set; }
+
 		/// <summary>
 		/// Returns true if the Player is on water.
 		/// </summary>
@@ -115,6 +117,7 @@ namespace PLAYERTWO.PlatformerProject
 		protected virtual void InitializeInputs() => inputs = GetComponent<PlayerInputManager>();
 		protected virtual void InitializeStats() => stats = GetComponent<PlayerStatsManager>();
 		protected virtual void InitializeHealth() => health = GetComponent<Health>();
+		protected virtual void InitializeCombat() => combat = GetComponent<PlayerCombat>();
 		protected virtual void InitializeTag() => tag = GameTags.Player;
 
 		protected virtual void InitializeRespawn()
@@ -462,7 +465,21 @@ namespace PLAYERTWO.PlatformerProject
 			}
 		}
 
-		public virtual void PickAndThrow()
+        public virtual void Attack()
+        {
+            if (inputs.GetAttackADown())
+            {
+                combat.RegisterAttackInput();
+
+                // Запускаем атаку ТОЛЬКО если не в состоянии атаки
+                if (!states.IsCurrentOfType(typeof(AttackAPlayerState)))
+                {
+                    states.Change<AttackAPlayerState>();
+                }
+            }
+        }
+
+        public virtual void PickAndThrow()
 		{
 			if (stats.current.canPickUp && inputs.GetPickAndDropDown())
 			{
@@ -720,6 +737,7 @@ namespace PLAYERTWO.PlatformerProject
 			InitializeInputs();
 			InitializeStats();
 			InitializeHealth();
+			InitializeCombat();
 			InitializeTag();
 			InitializeRespawn();
 

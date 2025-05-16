@@ -205,5 +205,13 @@ namespace PLAYERTWO.PlatformerProject
 		public bool applyGrindingSlopeFactor = true;
 		public float grindDashCoolDown = 0.5f;
 		public float grindDashForce = 25f;
-	}
+
+		[Header("Attack")]
+        public bool canCancelAttackIntoDash = true;
+
+		[Header("AttackA1")]
+		public float attackA1 = 0.5f;
+        public float attackA2 = 0.35f;
+        public float attackA3 = 0.85f;
+    }
 }

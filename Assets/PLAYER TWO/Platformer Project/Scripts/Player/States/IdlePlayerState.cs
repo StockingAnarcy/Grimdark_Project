@@ -19,6 +19,7 @@ namespace PLAYERTWO.PlatformerProject
 			player.PickAndThrow();
 			player.RegularSlopeFactor();
 			player.Friction();
+			player.Attack();
 
 			var inputDirection = player.inputs.GetMovementDirection();
 

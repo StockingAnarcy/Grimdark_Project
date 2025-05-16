@@ -81,7 +81,7 @@
                     "name": "Spin",
                     "type": "Button",
                     "id": "346795bb-dca6-4700-96d4-6a1feebbe42e",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -145,6 +145,15 @@
                     "type": "Button",
                     "id": "75373f86-c773-445a-b392-95a356385998",
                     "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "AttackA",
+                    "type": "Button",
+                    "id": "1e7cda25-6ab7-4598-9962-844a433d59fa",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -242,7 +251,7 @@
                 {
                     "name": "",
                     "id": "bc8ccc11-5ff6-4100-8019-c3b478bb288a",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -544,6 +553,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Swim Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69e860e9-b300-4c75-b6c8-1ee5ddc8b1ac",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2dd14025-faf3-4322-8da6-0479fbf97417",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AttackA",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

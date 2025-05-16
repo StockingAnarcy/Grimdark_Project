@@ -169,7 +169,7 @@ namespace PLAYERTWO.PlatformerProject
                     ""name"": ""Spin"",
                     ""type"": ""Button"",
                     ""id"": ""346795bb-dca6-4700-96d4-6a1feebbe42e"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -233,6 +233,15 @@ namespace PLAYERTWO.PlatformerProject
                     ""type"": ""Button"",
                     ""id"": ""75373f86-c773-445a-b392-95a356385998"",
                     ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AttackA"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e7cda25-6ab7-4598-9962-844a433d59fa"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -330,7 +339,7 @@ namespace PLAYERTWO.PlatformerProject
                 {
                     ""name"": """",
                     ""id"": ""bc8ccc11-5ff6-4100-8019-c3b478bb288a"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/t"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -634,6 +643,28 @@ namespace PLAYERTWO.PlatformerProject
                     ""action"": ""Swim Up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69e860e9-b300-4c75-b6c8-1ee5ddc8b1ac"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2dd14025-faf3-4322-8da6-0479fbf97417"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackA"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -658,6 +689,7 @@ namespace PLAYERTWO.PlatformerProject
             m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
             m_Gameplay_GrindBrake = m_Gameplay.FindAction("Grind Brake", throwIfNotFound: true);
             m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+            m_Gameplay_AttackA = m_Gameplay.FindAction("AttackA", throwIfNotFound: true);
         }
 
         ~@PlayerInputActions()
@@ -754,6 +786,7 @@ namespace PLAYERTWO.PlatformerProject
         private readonly InputAction m_Gameplay_Dash;
         private readonly InputAction m_Gameplay_GrindBrake;
         private readonly InputAction m_Gameplay_Pause;
+        private readonly InputAction m_Gameplay_AttackA;
         /// <summary>
         /// Provides access to input actions defined in input action map "Gameplay".
         /// </summary>
@@ -830,6 +863,10 @@ namespace PLAYERTWO.PlatformerProject
             /// </summary>
             public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
             /// <summary>
+            /// Provides access to the underlying input action "Gameplay/AttackA".
+            /// </summary>
+            public InputAction @AttackA => m_Wrapper.m_Gameplay_AttackA;
+            /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
@@ -903,6 +940,9 @@ namespace PLAYERTWO.PlatformerProject
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @AttackA.started += instance.OnAttackA;
+                @AttackA.performed += instance.OnAttackA;
+                @AttackA.canceled += instance.OnAttackA;
             }
 
             /// <summary>
@@ -962,6 +1002,9 @@ namespace PLAYERTWO.PlatformerProject
                 @Pause.started -= instance.OnPause;
                 @Pause.performed -= instance.OnPause;
                 @Pause.canceled -= instance.OnPause;
+                @AttackA.started -= instance.OnAttackA;
+                @AttackA.performed -= instance.OnAttackA;
+                @AttackA.canceled -= instance.OnAttackA;
             }
 
             /// <summary>
@@ -1114,6 +1157,13 @@ namespace PLAYERTWO.PlatformerProject
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnPause(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "AttackA" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnAttackA(InputAction.CallbackContext context);
         }
     }
 }

@@ -79,8 +79,8 @@ MonoBehaviour:
   swimDownwardsAcceleration: 6
   swimDownwardsTopSpeed: 10
   swimDeceleration: 3
-  canSpin: 1
-  canAirSpin: 1
+  canSpin: 0
+  canAirSpin: 0
   spinDuration: 0.5
   airSpinUpwardForce: 12
   allowedAirSpins: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
   airDiveSlopeDownwardForce: 40
   airDiveGroundLeapHeight: 10
   airDiveRotationSpeed: 45
-  canStompAttack: 1
+  canStompAttack: 0
   stompDownwardForce: 20
   stompAirTime: 0.8
   stompGroundTime: 0.25
@@ -117,7 +117,7 @@ MonoBehaviour:
     m_Bits: 8705
   ledgeClimbingSkinOffset: {x: 0, y: 0, z: 0}
   ledgeClimbingDuration: 1
-  canBackflip: 1
+  canBackflip: 0
   backflipLockMovement: 1
   backflipAirAcceleration: 12
   backflipTurningDrag: 2.5
@@ -149,3 +149,7 @@ MonoBehaviour:
   applyGrindingSlopeFactor: 1
   grindDashCoolDown: 0.5
   grindDashForce: 25
+  canCancelAttackIntoDash: 1
+  attackA1: 0.5
+  attackA2: 0.35
+  attackA3: 0.85

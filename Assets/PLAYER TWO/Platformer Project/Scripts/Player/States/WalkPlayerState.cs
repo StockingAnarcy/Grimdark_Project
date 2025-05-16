@@ -19,6 +19,7 @@ namespace PLAYERTWO.PlatformerProject
 			player.PickAndThrow();
 			player.Dash();
 			player.RegularSlopeFactor();
+			player.Attack();
 
 			var inputDirection = player.inputs.GetMovementCameraDirection();
 

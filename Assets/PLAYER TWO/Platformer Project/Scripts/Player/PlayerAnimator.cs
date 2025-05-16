@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace PLAYERTWO.PlatformerProject
 {
@@ -34,7 +35,12 @@ namespace PLAYERTWO.PlatformerProject
 		public string isHoldingName = "Is Holding";
 		public string onStateChangedName = "On State Changed";
 
-		[Header("Settings")]
+        public string attackTriggerName = "Attack";
+        public string comboStepName = "ComboStep";
+        public string attackSpeedName = "AttackSpeed";
+
+
+        [Header("Settings")]
 		public float minLateralAnimationSpeed = 0.5f;
 		public List<ForcedTransition> forcedTransitions;
 
@@ -49,7 +55,11 @@ namespace PLAYERTWO.PlatformerProject
 		protected int m_isHoldingHash;
 		protected int m_onStateChangedHash;
 
-		protected Dictionary<int, ForcedTransition> m_forcedTransitions;
+        protected int m_attackHash;
+        protected int m_comboStepHash;
+        protected int m_attackSpeedHash;
+
+        protected Dictionary<int, ForcedTransition> m_forcedTransitions;
 
 		protected Player m_player;
 
@@ -89,7 +99,11 @@ namespace PLAYERTWO.PlatformerProject
 			m_isGroundedHash = Animator.StringToHash(isGroundedName);
 			m_isHoldingHash = Animator.StringToHash(isHoldingName);
 			m_onStateChangedHash = Animator.StringToHash(onStateChangedName);
-		}
+
+            m_attackHash = Animator.StringToHash(attackTriggerName);
+            m_comboStepHash = Animator.StringToHash(comboStepName);
+            m_attackSpeedHash = Animator.StringToHash(attackSpeedName);
+        }
 
 		protected virtual void HandleForcedTransitions()
 		{
@@ -117,9 +131,33 @@ namespace PLAYERTWO.PlatformerProject
 			animator.SetInteger(m_jumpCounterHash, m_player.jumpCounter);
 			animator.SetBool(m_isGroundedHash, m_player.isGrounded);
 			animator.SetBool(m_isHoldingHash, m_player.holding);
-		}
 
-		protected virtual void Start()
+            animator.SetInteger(m_comboStepHash, m_player.combat.CurrentCombo);
+
+        }
+
+        public void TriggerAttack(int comboStep)
+        {
+            // Сначала сбрасываем триггер
+            animator.ResetTrigger(m_attackHash);
+
+            // Устанавливаем шаг комбо
+            animator.SetInteger(m_comboStepHash, comboStep);
+
+            // Активируем триггер
+            animator.SetTrigger(m_attackHash);
+
+            // Устанавливаем скорость анимации
+            animator.SetFloat(m_attackSpeedHash, comboStep switch
+            {
+                1 => 1.0f,
+                2 => 1.0f,
+                3 => 1.0f,
+                _ => 1.0f
+            });
+        }
+
+        protected virtual void Start()
 		{
 			InitializePlayer();
 			InitializeForcedTransitions();
@@ -127,6 +165,14 @@ namespace PLAYERTWO.PlatformerProject
 			InitializeAnimatorTriggers();
 		}
 
-		protected virtual void LateUpdate() => HandleAnimatorParameters();
+		protected virtual void LateUpdate()
+		{
+			HandleAnimatorParameters();
+
+			if (animator.GetBool(m_attackHash))
+            {
+                animator.ResetTrigger(m_attackHash);
+            }
+        }
 	}
 }

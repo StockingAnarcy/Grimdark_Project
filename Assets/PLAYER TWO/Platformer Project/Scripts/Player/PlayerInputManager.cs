@@ -24,6 +24,7 @@ namespace PLAYERTWO.PlatformerProject
 		protected InputAction m_glide;
 		protected InputAction m_dash;
 		protected InputAction m_grindBrake;
+		protected InputAction m_attackA;
 
 		protected Camera m_camera;
 
@@ -52,6 +53,7 @@ namespace PLAYERTWO.PlatformerProject
 			m_glide = actions["Glide"];
 			m_dash = actions["Dash"];
 			m_grindBrake = actions["Grind Brake"];
+			m_attackA = actions["AttackA"];
 		}
 
 		public virtual Vector3 GetMovementDirection()
@@ -146,6 +148,7 @@ namespace PLAYERTWO.PlatformerProject
 		public virtual bool GetDashDown() => m_dash.WasPressedThisFrame();
 		public virtual bool GetGrindBrake() => m_grindBrake.IsPressed();
 		public virtual bool GetPauseDown() => m_pause.WasPressedThisFrame();
+		public virtual bool GetAttackADown() => m_attackA.WasPressedThisFrame();
 
 		public virtual bool EscPressed()
 		{
