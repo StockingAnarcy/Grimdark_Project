@@ -101,6 +101,8 @@ namespace PLAYERTWO.PlatformerProject
 		/// </summary>
 		public Pickable pickable { get; protected set; }
 
+		public PlayerIK PlayerIK { get; protected set; }
+
 		/// <summary>
 		/// Returns true if the Player health is not empty.
 		/// </summary>
@@ -508,6 +510,14 @@ namespace PLAYERTWO.PlatformerProject
 				holding = true;
 				this.pickable = pickable;
 				pickable.PickUp(pickableSlot);
+				var playerIK = FindFirstObjectByType<PlayerIK>();
+				if(playerIK != null)
+				{
+					playerIK.leftHandTarget = pickable.IKLeftTarget;
+                    playerIK.rightHandTarget = pickable.IKRightTarget;
+                    playerIK.ikWeight = 1f;
+                }
+
 				pickable.onRespawn.AddListener(RemovePickable);
 				playerEvents.OnPickUp?.Invoke();
 			}
@@ -521,7 +531,13 @@ namespace PLAYERTWO.PlatformerProject
 				pickable.Release(transform.forward, force);
 				pickable = null;
 				holding = false;
-				playerEvents.OnThrow?.Invoke();
+                var playerIK = FindFirstObjectByType<PlayerIK>();
+                if (playerIK != null)
+                {
+                    playerIK.leftHandTarget = null;
+                    playerIK.rightHandTarget = null;
+                }
+                playerEvents.OnThrow?.Invoke();
 			}
 		}
 
@@ -531,7 +547,13 @@ namespace PLAYERTWO.PlatformerProject
 			{
 				pickable = null;
 				holding = false;
-			}
+                var playerIK = GetComponent<PlayerIK>();
+                if (playerIK != null)
+                {
+                    playerIK.leftHandTarget = null;
+                    playerIK.rightHandTarget = null;
+                }
+            }
 		}
 
 		public virtual void AirDive()

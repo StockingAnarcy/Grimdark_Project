@@ -22,7 +22,10 @@ namespace PLAYERTWO.PlatformerProject
 		public int damage = 1;
 		public float minDamageSpeed = 5f;
 
-		[Space(15)]
+        public Transform IKLeftTarget;
+        public Transform IKRightTarget;
+
+        [Space(15)]
 
 		/// <summary>
 		/// Called when this object is Picked.

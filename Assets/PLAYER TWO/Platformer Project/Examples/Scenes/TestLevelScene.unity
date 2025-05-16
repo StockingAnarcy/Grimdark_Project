@@ -13834,7 +13834,7 @@ PrefabInstance:
     - target: {fileID: 1785639998209431216, guid: eb0f77ac3ce65a04db54ff55e59b0815,
         type: 3}
       propertyPath: m_height
-      value: 2
+      value: 1.96
       objectReference: {fileID: 0}
     - target: {fileID: 1785639998209431216, guid: eb0f77ac3ce65a04db54ff55e59b0815,
         type: 3}
@@ -14238,13 +14238,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4151346648260422250, guid: e5e33fbe10d53a343aabf9ae5aff9f15,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 15
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151346648260422250, guid: e5e33fbe10d53a343aabf9ae5aff9f15,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151346648260422250, guid: e5e33fbe10d53a343aabf9ae5aff9f15,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4151346648260422250, guid: e5e33fbe10d53a343aabf9ae5aff9f15,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.455387
+      value: -15.57
       objectReference: {fileID: 0}
     - target: {fileID: 4151346648260422250, guid: e5e33fbe10d53a343aabf9ae5aff9f15,
         type: 3}
@@ -14254,7 +14264,7 @@ PrefabInstance:
     - target: {fileID: 4151346648260422250, guid: e5e33fbe10d53a343aabf9ae5aff9f15,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.401194
+      value: 15.42
       objectReference: {fileID: 0}
     - target: {fileID: 4151346648260422250, guid: e5e33fbe10d53a343aabf9ae5aff9f15,
         type: 3}
@@ -15410,7 +15420,7 @@ Transform:
   m_GameObject: {fileID: 1692810414}
   serializedVersion: 2
   m_LocalRotation: {x: 0.000000037748947, y: 1.513412e-14, z: -5.0242975e-15, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2255783, z: 1.4193988}
+  m_LocalPosition: {x: 0, y: -0.534, z: 1.86}
   m_LocalScale: {x: 2.857143, y: 2.857143, z: 2.857143}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20348,6 +20358,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9189773551592778767}
+    - targetCorrespondingSourceObject: {fileID: 3536280333041439774, guid: 2436a77f2285263478dab9fa7bbb8fc3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9189773551592778769}
+    - targetCorrespondingSourceObject: {fileID: 3536280333041439774, guid: 2436a77f2285263478dab9fa7bbb8fc3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9189773551592778770}
   m_SourcePrefab: {fileID: 100100000, guid: 2436a77f2285263478dab9fa7bbb8fc3, type: 3}
 --- !u!1001 &5292645256339478382
 PrefabInstance:
@@ -21325,6 +21343,47 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9189773551592778769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8413694936562005684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154a7e32af591114baa2a80614d79298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHandTarget: {fileID: 0}
+  rightHandTarget: {fileID: 0}
+  ikWeight: 1
+--- !u!114 &9189773551592778770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8413694936562005684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d1bd108e340c14da5c937e4764b2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 9189773551592778768}
+  enableFeetIk: 1
+  heightFromGroundRaycast: 0.2
+  raycastDownDistance: 0.5
+  environmentLayer:
+    serializedVersion: 2
+    m_Bits: 16145
+  pelvisOffset: 0
+  pelvisUpAndDownSpeed: 0.28
+  feetToIkPositionSpeed: 0.5
+  leftFootAnimVariableName: Left Foot Q
+  rightFootAnimVariableName: Right Foot Q
+  useProIkFeatures: 0
+  showSolverDebug: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
